@@ -73,7 +73,7 @@ Filtering metadata supports the following operators:
 '''
 
 result2 = collection.query(
-    query_texts=["movie"],
+    query_texts=["movie about world war one"],
     where={
         "directors": "John Ford"
     },
@@ -83,7 +83,7 @@ print(result2)
 
 
 result3 = collection.query(
-    query_texts=["Title"],
+    query_texts=["a movie where the lead actress dies"],
     where={
         "countries": {
             "$in": ["USA", "India", "UK"]
@@ -95,7 +95,7 @@ print(result3)
 
 
 result4 = collection.query(
-    query_texts=["Title"],
+    query_texts=["movie about love during war times"],
     where={
         "$and": [
             {
@@ -116,7 +116,7 @@ print(result4)
 
 
 result5 = collection.query(
-    query_texts=["Title"],
+    query_texts=["comedy movie to be watched with family"],
     where={
         "$or": [
             {
@@ -143,7 +143,7 @@ Filtering document text supports the following operators:
     $ncontains - a text does not contain a substring
 '''
 result6 = collection.query(
-    query_texts=["Title"],
+    query_texts=["world war one"],
     where_document={
         "$contains": "unhappily married"
     },
